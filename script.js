@@ -1,26 +1,27 @@
-function insert(num)
-{
-    var numero = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = numero + num;
-}
-function clean()
-{
-    document.getElementById('resultado').innerHTML = "";
-}
-function back()
-{
-    var resultado = document.getElementById('resultado').innerHTML;
-    document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length -1);
-}
-function calcular()
-{
-    var resultado = document.getElementById('resultado').innerHTML;
-    if(resultado)
-    {
-        document.getElementById('resultado').innerHTML = eval(resultado);
+function Calcular(op){
+    
+    var valor1 = document.getElementById("valor1");
+    var valor2 = document.getElementById("valor2");
+    var total = document.getElementById("total");
+    var op, resultado;
+
+    if(op == "-"){
+        resultado = Number(valor1.value) - Number(valor2.value);
+        total.innerHTML = resultado;
     }
-    else
-    {
-        document.getElementById('resultado').innerHTML = "Nada..."
+    else if(op == "+"){
+        resultado = Number(valor1.value) +  Number(valor2.value);
+        total.innerHTML = resultado;
     }
+    else if(op == "/"){
+        resultado = Number(valor1.value) /  Number(valor2.value);
+        total.innerHTML = resultado;
+    }
+    else if(op == "*"){
+        resultado = Number(valor1.value) *  Number(valor2.value);
+        total.innerHTML = resultado;
+    }
+    
 }
+
+
